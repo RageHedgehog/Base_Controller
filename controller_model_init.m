@@ -1,4 +1,4 @@
-controller_version = 'v0.1.0';
+controller_version = 'v0.1.1';
 
 %% Constant Variable
 CONTROL_CONST.dt = 0.002;   % model execution period
