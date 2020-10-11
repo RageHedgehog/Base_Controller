@@ -1,11 +1,15 @@
-controller_version = 'v0.1.1';
+model_version = 'v0.1.1';
+model_name = 'Base Controller';
+
+%% load configuration
+load('control_default_config.mat');
 
 %% Constant Variable
 CONTROL_CONST.dt = 0.002;   % model execution period
 
 %% Exported Value
 CONTROL_EXPORT_VALUE.period = uint32(CONTROL_CONST.dt*1e3);
-CONTROL_EXPORT_VALUE.model_info = int8(['Base Controller ', controller_version, 0]); % 0 for end of string
+CONTROL_EXPORT_VALUE.model_info = int8([model_name, ' ', model_version, 0]); % 0 for end of string
 % Export to firmware
 CONTROL_EXPORT = Simulink.Parameter(CONTROL_EXPORT_VALUE);
 CONTROL_EXPORT.CoderInfo.StorageClass = 'ExportedGlobal';
